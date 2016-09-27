@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RoseOnly首页_一生只送一人_中国高端鲜花第一品牌</title>
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type = "text/javascript" src = "js/jquery-1.12.4.js"></script>
+	<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+	<script type = "text/javascript" src = "js/style.js"></script>
+	<script type = "text/javascript" src = "js/shopCart.js"></script>
+	<script type = "text/javascript" src = "js/login.js"></script>
+	<script>
+		$(function(){
+			$(".nav-container").load("html/nav.html",function(){
+				$(function(){
+					var $subNavShow = $(".nav-container #nav > li").mouseenter(function(){
+						$("#nav > li > a").removeClass("on");
+						$(this).find("a").addClass("on");
+						//console.log("ok");
+						// $(this).find(".sub-nav").fadeIn(2000);
+						$(this).find(".sub-nav").css({display: "block"});
+						$(this).find(".sub-nav").stop().animate({
+							opacity:1,
+							zIndex:99999
+						},600);
+					}).mouseleave(function(){
+						$(this).find(".sub-nav").css({display: "none"});
+						$("#nav > li > a").removeClass("on");
+						$(this).find(".sub-nav").stop().animate({
+							opacity:0,
+							zIndex: 10000,
+						},600);
+					});
+				});						
+			});
+			$("#cartNum").html($("#tableAdd > tbody > tr").length);
+			$(".footer").load("html/foot.html");
+			$(".backTo-top").css("display","none");
+			// 验证码的变换
+
+			// for(var i = 0; i < 4; i++){
+			// 	var num = parseInt(Math.random() * 9);
+			// 	arr.push(num);
+			// }
+			//  arr.join("");
+
+		});
+	</script>
+
+</head>
+<body>
+	<div class = "header">
+		<div class = "head">
+			<a href="index.html" id = "roseonly-logo" class = "roseonlyLogo"></a>
+			<a href="index.html" class = "love-roseonly"></a>
+			<div class = "right loginBox">
+				<a href="login.html"><span id="ischan" class = "span1 change1"><!-- 登录 --></span><span><!-- | --></span></a>
+				<a id = "tuichu" href="signup.html"><span class = "span1 change2"><!-- 注册 --></span><span><!-- | --></span></a>
+				<a href="shopCart.html" class = "iconfont gwd">&#xe602;</a>
+				<span id = "cartNum">(0)</span>
+			</div>
+		</div>
+	</div>
+	<div class = "logo-container">
+		<a href="">
+			<img src="images/14659848743575108.png" alt="">
+		</a>
+	</div>
+
+	<div class = "nav-container">
+	</div>
+	<!-- 注册  start-->
+	<div class = "sign-bg">
+		<div class = "signUp">
+			<form class = "regis-form " action=""  method = "">
+				<div class = "regisBox">
+					<div class = "regisTit">注册</div>
+					<div class = "regisInput">
+						<input type="text" id = "username1" name = "username" placeholder = "请输入手机号" class = "inputBox">
+						<div class = "remider" id = "ph1"></div>
+					</div>
+					
+					<div class = "regisInput">
+						<input id = "testCode1" type="text" placeholder = "图片验证码" class = "inputBox">
+						<div class = "rightImg" id = "imgTest">验证码
+							<!-- <img src="" alt=""> -->
+						</div>
+						<a href="javascript:;" class = "tixing" id = "changeCode">获取</a>
+						<div class = "remider" id = "tscd1"></div>
+					</div>
+					<div class = "regisInput" >
+						<input  type="text" id = "phoneTestCode1" placeholder = "短信验证码" class = "inputBox">
+						<div class = "rightImg" >
+							<a href="">发送验证码</a> 
+						</div>
+						<span class = "tixing">语音</span>
+						<div class = "remider" id = "phtst1"></div>
+					</div>
+					<div class = "regisInput">
+						<input type="password" id = "password1" name = "password" placeholder = "6-16位数字或字母" class = "inputBox">
+						<div class = "remider" id = "psw1"></div>
+					</div>
+					<div class = "signA">
+						<a href=""></a>
+						<a href="login.html">已有账号</a>
+					</div>
+					<a href="javascript:;" class = "regisBtn">创建账号</a>
+					<div class = "regisBot">roseonly支持门店城市当日达服务！</div>
+				</div>
+			</form>		
+		</div>
+		
+	</div>	
+	<!-- 注册 endding -->
+	<div class = "footer clear">
+	</div>
+	<div class = "backTo-top">
+		<a href="" class = "iconfont backTop">&#xe600;</a>
+	</div>
+	<div class = "weixin">
+		<a href="" class = "iconfont weinxinA">&#xe601;</a>
+	</div>
+</body>
+</html>

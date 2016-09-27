@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RoseOnly购物车页面</title>
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type = "text/javascript" src = "js/jquery-1.12.4.js"></script>
+	<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+	<script type = "text/javascript" src = "js/style.js"></script>
+	<script type = "text/javascript" src = "js/shopCart.js"></script>
+	
+	
+	<script>
+		$(function(){
+			// 共同样式的引入
+			$(".footer").load("html/foot.html");
+
+			var danjia = ($(".shopCart-container .Price").text()).substring(1);
+			var num = ($(".shopCart-container .shopcart-numshow").val());
+			var newPrice = parseFloat(danjia) * parseFloat(num);
+			//console.log(newPrice)
+			if(!newPrice){
+				$(".shopCart-container .cartTotal font").html("0.0");
+			}else{
+				$(".shopCart-container .cartTotal font").html(newPrice);	
+			}
+
+			// 页面头部 购物车 (0)
+			//$("#cartNum").html("("+ num +")");
+			$("#cartNum").html("("+ $("#tableAdd > tbody > tr").length +")");
+			$(".backTo-top").css("display","none");
+		});
+	</script>
+
+
+</head>
+<body>
+	<div class = "header">
+		<div class = "head">
+			<a href="index.html" id = "roseonly-logo" class = "roseonlyLogo"></a>
+			<a href="index.html" class = "love-roseonly"></a>
+			<div class = "right loginBox">
+				<a class = "change1" href="login.html"><span id="ischan" class = "span1">登录</span><span>|</span></a>
+				<a class = "change2" href="signup.html"><span class = "span1">注册</span><span>|</span></a>
+				<a href="shopCart.html" class = "iconfont gwd">&#xe602;</a>
+				<span id = "cartNum">(0)</span>
+			</div>
+		</div>
+	</div>
+	<div class = "logo-container">
+		<a href="">
+			<img src="images/14659848743575108.png" alt="">
+		</a>
+	</div>
+
+	<!-- 购物车  start-->
+	<div class = "shopCart-container">
+
+		<div class = "line"></div>
+		<div class = "order">
+			<div class = "shopCart-detail">
+				<div class = "shopCart-tit">
+					<div class = "shopleft">我的购物车
+					</div>
+					<a href="" class = "shopright">清空购物车</a>
+				</div>
+
+				<table id = "tableAdd" border = "0" cellspacing = "0" cellpadding = "0" >
+					<thead>
+						<tr>
+							<td width = "110">序号</td>
+							<td width = "110">品牌</td>
+							<td width = "420">商品名称</td>
+							<td width = "120">单价</td>
+							<td width = "13"></td>
+							<td width = "60">数量</td>
+							<td width = "13"></td>
+							<td>操作</td>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 这里需要通过页面进行渲染 -->
+						<!-- <tr id = "商品Id" height = "120px">
+							<td>序号 1</td>
+							<td> 品牌 roseonly</td>
+							<td>
+								<img class = "shop-cart-img" src="picture/14296003886093198.png" alt="">
+								<div class = "shop-cart-name"> 商品描述 
+									爱在满怀-陪伴-朱砂-99支
+								</div>
+							</td>
+							<td>￥6999.0</td>
+							<td>
+								<a href="javascript:void(0);" class = "cart-down">
+									<img class = "num-cut" src="picture/cart02.png" alt="">
+								</a>
+							</td>
+							<td>
+								<input class = "shopcart-numshow" type="text" value = "1">
+							</td>
+							<td>
+								<a href="javascript:void(0);">
+									<img src="picture/cart03.png" alt="">
+								</a>
+							</td>
+							<td>
+								<a href="javascript:void(0);">删除</a>
+							</td>
+						</tr> -->
+						<!-- 渲染结束 -->
+
+					</tbody>
+				</table>
+				<div class = "cartTotal">
+					合计：￥
+					<font>0.0</font>
+				</div>
+				<!-- 可以作为提交式图片 -->
+				<input class = "img-in1" type="image" src = "images/once.jpg">
+				<input class = "img-in2" type="image" src = "images/go-on.jpg">
+			</div>
+			<div class = "clear"></div>
+			<div class = "help-right">
+				<div class = "helpNav">订单帮助</div>
+				<p>热线电话:400-1314-520</p>
+				<p>
+					客服邮箱:
+					<a href="">service@roseonly.com</a>
+					  客服工作时间：周一至周日9:00-21:00
+				</p>
+				<p>如果您在下单过程中遇到问题，请与我们联系。因为鲜花商品对配送时效有特殊要求，订购后请随时登录查询物流状态。</p>
+			</div>
+			
+		</div>
+		<div class = "bottom-line"></div>
+	</div>
+
+
+	<!-- 购物车 endding -->
+	<div class = "footer clear">
+	</div>
+	<div class = "backTo-top">
+		<a href="" class = "iconfont backTop">&#xe600;</a>
+	</div>
+	<div class = "weixin">
+		<a href="" class = "iconfont weinxinA">&#xe601;</a>
+	</div>
+</body>
+</html>

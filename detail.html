@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RoseOnly首页_一生只送一人_中国高端鲜花第一品牌</title>
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type = "text/javascript" src = "js/jquery-1.12.4.js"></script>
+	<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+	<script type = "text/javascript" src = "js/style.js"></script>
+	<script type = "text/javascript" src = "js/shopCart.js"></script>
+	<script>
+		$(function(){
+			$(".nav-container").load("html/nav.html",function(){
+				$(function(){
+					var $subNavShow = $(".nav-container #nav > li").mouseenter(function(){
+						$("#nav > li > a").removeClass("on");
+						$(this).find("a").addClass("on");
+						//console.log("ok");
+						// $(this).find(".sub-nav").fadeIn(2000);
+						$(this).find(".sub-nav").css({display: "block"});
+						$(this).find(".sub-nav").stop().animate({
+							opacity:1,
+							zIndex:99999
+						},600);
+					}).mouseleave(function(){
+						$(this).find(".sub-nav").css({display: "none"});
+						$("#nav > li > a").removeClass("on");
+						$(this).find(".sub-nav").stop().animate({
+							opacity:0,
+							zIndex: 10000,
+						},600);
+					});
+				});						
+			});
+			$(".footer").load("html/foot.html");
+			$("#cartNum").html($("#tableAdd > tbody > tr").length);
+			$(".backTo-top").css("display","none");
+			// 放大镜 效果
+			var scale = 4;
+			var imgWH = 400;
+			// var $img = $("<img src = 'picture/14719460348945560.png'>");
+			var $lay = $("<div></div>").css({
+				width:imgWH / scale,
+				height:imgWH / scale,
+				position:"absolute",
+				left:0,
+				top: 0,
+				background:"#000",
+				opacity: 0.2
+			}).appendTo(".xq-contain .con-cent").hide();
+			//大图的生成与显示
+			var $big = $("<div><img src = 'picture/14719460348945560.png'/></div>").css({
+				width:imgWH,
+				height:imgWH + 100,
+				position:"absolute",
+				right:imgWH + 10,
+				background:"#fff",
+				overflow:"hidden",
+				top:0
+			}).appendTo(".xq-contain .con-cent").hide().mouseenter(function(e){
+				e.stopPropagation();
+			}).children().eq(0).width(imgWH * scale).height(imgWH * scale).parent();
+
+
+			$(".xq-contain .con-cent").hover(function(){
+				$lay.show();
+				$big.show();
+				$(this).mousemove(function(e){
+					var x = e.pageX - $(this).offset().left - $lay.width() / 2;
+					var y = e.pageY - $(this).offset().top  - $lay.height() / 2;
+					var maxWidth = $(this).width() - $lay.width();
+					var maxHeight = $(this).height() - $lay.height();
+					var nowX = Math.max(Math.min(maxWidth, x), 0);
+					var nowY = Math.max(Math.min(maxHeight, y), 0);
+					$lay.css({
+						left:nowX,
+						top:nowY
+					});
+					$big.children().eq(0).css({
+						marginLeft:nowX * scale * -1,
+						marginTop:nowY * scale * -1
+					});
+				});
+			}, function(){
+				$lay.hide();
+				$big.hide();
+			});
+
+
+			// 实现点击增加数据icon_down icon_num icon_up
+			$("#icon_up").on("click", function(){
+				// console.log("ok");
+				// console.log($("#icon_num").val());
+				var num = Number($("#icon_num").val());
+				// console.log("num" + num);
+				num++;
+				// console.log("num1" + num);
+				$("#icon_num").val(num);
+			});
+			$("#icon_down").on("click", function(){
+				var num = Number($("#icon_num").val());
+				// console.log("ok1");
+				if(num == 1){
+					num =  1;
+				}else{
+					num--;	
+				}
+				$("#icon_num").val(num);
+			});
+
+			//点击图片换成 相应的图图片xq-contain  detail-img
+			$(".xq-contain .detail-img a").on("click" ,function(){
+				$(".xq-contain .con-cent").find("img").attr("src", $(this).find("img").attr("src"));
+				//console.log($(this).find("img").attr("src"));
+				$(".xq-contain .detail-img a").removeClass("on");
+				$(this).addClass("on");
+			});
+		});
+
+	</script>
+
+</head>
+<body>
+	<div class = "header">
+		<div class = "head">
+			<a href="index.html" id = "roseonly-logo" class = "roseonlyLogo"></a>
+			<a href="index.html" class = "love-roseonly"></a>
+			<div class = "right loginBox">
+				<a class = "change1" href="login.html"><span id="ischan" class = "span1">登录</span><span>|</span></a>
+				<a class = "change2" href="signup.html"><span class = "span1">注册</span><span>|</span></a>
+				<a href="shopCart.html" class = "iconfont gwd">&#xe602;</a>
+				<span id = "cartNum">(0)</span>
+			</div>
+		</div>
+	</div>
+	<div class = "logo-container">
+		<a href="">
+			<img src="images/14659848743575108.png" alt="">
+		</a>
+	</div>
+
+	<div class = "nav-container">
+
+	</div>
+	<!-- 详情页面  start-->	
+	<div class = "xq-contain">
+		<div class = "con-detail">
+			<div class = "detail-main">
+				<div class = "con-left">
+					<div class = "d1"></div>
+					<div class = "d2">
+						All About Love
+						<br>
+						全世爱
+					</div>
+					<div class = "d3">
+						倾心<span class = "span1">嫣红</span>
+					</div>
+					<div>(簇拥版)</div>
+
+				</div>
+				<div class = "con-cent">
+					<img src="picture/14719460348945560.png" alt="">
+				</div>
+				<div class = "con-right">
+					<div class = "tit">全世爱 - 倾心簇拥版嫣红</div>
+					<div class = "tit-de">永生玫瑰 中型心形盒 <!-- R020445121 --></div>
+					<br>
+					<div class = "pay" >￥1999.0</div>
+					<br>
+					<div class = "color-select">
+						<span >可选颜色：</span>
+						<span class = "color"></span>
+					</div>
+					<div class = "color-select shop-num">
+						<span>购买数量：</span>
+						<a id = "icon_down" href="javascript:;"><img src="picture/icon_down.png" alt=""></a>
+						<input id = "icon_num" type="text" value = "1">
+						<a id = "icon_up" href="javascript:;" ><img src="picture/icon_up.png" alt=""></a>
+						<div style = "height: 0; clear:both;"></div>
+					</div>
+					<a href="login.html" class = "buyBtn">立即购买</a>
+					<!-- 加入购物按钮 #addcart-->
+					<a href="shopCart.html" id = "addCart" data-pid = "1" class = "addBtn" target = "blank1">加入购物车</a>
+					<div style = "height: 0; clear:both;"></div>
+					<div class = "detail-img"> 
+						<div></div>
+						<a href="javascript:;" class = "on">
+							<img src="picture/14719460348945560.png" alt="">
+						</a>
+						<a href="javascript:;">
+							<img src="picture/14422197966628664.png" alt="">
+						</a>
+						<a href="javascript:;">
+							<img src="picture/14422197967002463.png" alt="">
+						</a>
+						<a href="javascript:;">
+							<img src="picture/14422197967173143.png" alt="">
+						</a>
+						<a href="javascript:;">
+							<img src="picture/14422197967527854.png" alt="">
+						</a>
+					</div>
+					<div style = "height: 0; clear:both;"></div>
+				</div>
+			</div>
+			<div>
+				<img src="picture/xq_08.png" alt="">
+			</div>
+			<div class = "detail-box1">
+				<img src="picture/14715887820843668.jpg" alt="">
+			</div>
+			<div class = "detail-box2">
+				<img src="picture/14715887821496571.jpg" alt="">
+			</div>
+			<div class = "detail-box3">
+				<img src="picture/14715887822418755.jpg" alt="">
+			</div>
+			<div class = "detail-box1">
+				<img src="picture/14715887823448910.jpg" alt="">
+			</div>
+			<div class = "detail-box2">
+				<img src="picture/14715887824503899.jpg" alt="">
+			</div>
+			<div class = "detail-box3">
+				<img src="picture/14715887825169334.jpg" alt="">
+			</div>
+			<div>
+				<img src="picture/14715887825906867.jpg" alt="">
+			</div>
+			<div>
+				<img src="picture/14715887826653052.jpg" alt="">
+			</div>
+			<div>
+				<img src="picture/14715887827471760.jpg" alt="">
+			</div>
+			<div class = "detail1">
+				<div>
+					Caring Notes
+					<br>
+					<b style = "font-size: 16px">保养物语</b>
+				</div>
+				<br>
+				<p style = "font-weight:bold">细心呵护保养，成就roseonly永恒之美</p>
+				<br>
+				<a href="">点击查看详情</a>
+			</div>
+			<div class = "detail1">
+				<div>
+					Exchange
+					<br>
+					<b style = "font-size: 16px">退换条例</b>
+				</div>
+				<br>
+				<p style = "font-weight:bold">下单后有任何问题，请及时联系客服</p>
+				<br>
+				<a href="">点击查看详情</a>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- 详情页面 endding -->
+	<div class = "footer clear">
+	</div>
+	<div class = "backTo-top">
+		<a href="" class = "iconfont backTop">&#xe600;</a>
+	</div>
+	<div class = "weixin">
+		<a href="" class = "iconfont weinxinA">&#xe601;</a>
+	</div>
+</body>
+</html>

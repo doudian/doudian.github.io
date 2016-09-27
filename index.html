@@ -1,10 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="UTF-8">
+	<title>RoseOnly首页_一生只送一人_中国高端鲜花第一品牌</title>
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type = "text/javascript" src = "js/jquery-1.12.4.js"></script>
+	<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+	<script type = "text/javascript" src = "js/style.js"></script>
+	<script>
+		$(function(){
+			$(".nav-container").load("html/nav.html",function(){
+				$(function(){
+					var $subNavShow = $(".nav-container #nav > li").mouseenter(function(){
+						$("#nav > li > a").removeClass("on");
+						$(this).find("a").addClass("on");
+						// $(this).find(".sub-nav").fadeIn(2000);
+						$(this).find(".sub-nav").css({display: "block"});
+						$(this).find(".sub-nav").stop().animate({
+							opacity:1,
+							zIndex:99999
+						},600);
+					}).mouseleave(function(){
+						$(this).find(".sub-nav").css({display: "none"});
+						$("#nav > li > a").removeClass("on");
+						$(this).find(".sub-nav").stop().animate({
+							opacity:0,
+							zIndex: 10000,
+						},600);
+					});
+				});						
+			});
+			$(".footer").load("html/foot.html");
+			$("#cartNum").html("("+ $("#tableAdd > tbody > tr").length +")");
+			$(".backTo-top").css("display","none");
+		});
+	</script>
+
+
 </head>
 <body>
- 11222e'de'w'fe'fe111
+	<div  class = "header">
+		<div class = "head">
+			<a href="index.html" id = "roseonly-logo" class = "roseonlyLogo"></a>
+			<a href="index.html" class = "love-roseonly"></a>
+			<div class = "right loginBox">
+				<a class = "change1" href="login.html"><span id="ischan" class = "span1">登录</span><span>|</span></a>
+				<a class = "change2" href="signup.html"><span class = "span1">注册</span><span>|</span></a>
+				<a href="shopCart.html" class = "iconfont gwd">&#xe602;</a>
+				<span id = "cartNum">(0)</span>
+			</div>
+		</div>
+	</div>
+	<div class = "logo-container">
+		<a href="">
+			<img src="images/14659848743575108.png" alt="">
+		</a>
+	</div>
+
+	<div class = "nav-container">
+	</div>
+	<div class = "main-container">
+		<div class = "banner">
+			<a href="javascript:;" class = "prevBtn"></a>
+			<a href="javascript:;" class = "nextBtn"></a>
+			<ul class = "banner-imgs">
+				<li><a href="liebiao.html"><img src="images/14703663425633109.jpg" alt=""></a></li>
+				<li><a href="liebiao.html"><img src="images/14708159835947106.jpg" alt=""></a></li>
+				<li><a href="liebiao.html"><img src="images/14714037493354510.jpg" alt=""></a></li>
+				<li><a href="liebiao.html"><img src="images/14718457029684837.jpg" alt=""></a></li>
+				<li><a href="liebiao.html"><img src="images/14724636042153218.jpg" alt=""></a></li>
+			</ul>
+			
+			<div class = "pageing">
+				<span  class = "on"><img src="" alt="">0</span>
+				<span><img src="" alt="">1</span>
+				<span><img src="" alt="">2</span>
+				<span><img src="" alt="">3</span>
+				<span><img src="" alt="">4</span>
+			</div>
+			
+		</div>
+		<div class = "hotShop">
+			<div class = "new-content">
+				<dl class = "new-xp">
+					<dt>
+						<a href="" class = "xp">
+							<img src="images/14725274565658985.jpg" alt="">
+							<div class = "coverBg"></div>
+						</a>
+					</dt>
+					<dd>新品上新</dd>
+				</dl>
+				<dl class = "new-xp">
+					<dt>
+						<a href="" class = "xp">
+							<img src="images/14690102560686878.jpg" alt="">
+							<div class = "coverBg"></div>
+						</a>	
+						
+					</dt>
+					<dd>经典热卖</dd>
+				</dl>
+				<dl class = "new-xp">
+					<dt>
+						<a href="" class = "xp">
+							<img src="images/14724519049423892.jpg" alt="">
+							<div class = "coverBg"></div>
+						</a>	
+						
+					</dt>
+					<dd>当月星座</dd>
+				</dl>
+				<dl class = "new-xp xp-last">
+					<dt>
+						<a href="" class = "xp">
+							<img src="images/14690102021785355.jpg" alt="">
+							<div class = "coverBg"></div>
+						</a>	
+						
+					</dt>
+					<dd>明星同款</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 热卖单品推介 -->
+		<div class = "hotShop">
+			<p>热卖单品推介</p>
+		</div>
+		<!-- 四个tab 页面 鼠标划上去显示 -->
+		<div class = "hot-danpin">
+			<div class = "danpin-box">
+				<ul class = "category">
+					<li id = "one1" class = "on" >鲜花玫瑰
+						<span class = "span-line"></span>
+					</li>
+					<li id = "one2" >永生玫瑰
+						<span class = "span-line"></span>
+					</li>
+					<li id = "one3" >玫瑰珠宝
+						<span class = "span-line"></span>
+					</li>
+					<li id = "one4" >玫瑰饰品
+					</li>
+				</ul>
+				<ul class = "detail" >
+					<li id = "cont_one_1" class = "one block">
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14701945928768231.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+					</li>
+					<li id = "cont_one_2" class = "one">
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14422197967002463.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+					</li>
+					<li id = "cont_one_3" class = "one">
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14592322205727416.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+					</li>
+					<li id = "cont_one_4" class = "one">
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+						<div>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+							<a href="" class = "li-border">
+								<dl>
+									<dt>
+										<img src="images/14434103449739706.png" alt="">
+									</dt>
+									<dd>
+										<p class = "p1">经典永续 19支</p>
+										<p class = "p2">鲜花玫瑰19支 </p>
+										<p class = "p3">￥1999.0</p>
+									</dd>
+								</dl>
+							</a>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div><!-- 单品 endding -->
+		<!-- 鲜花玫瑰 -->
+		<div class = "roseBox">
+			<div class = "title">
+				<div class = "biaoti left">
+					<span class = "sp1">鲜花玫瑰</span>
+					<span class = "sp2">|</span>
+					<span class = "sp3">Fresh CutRose</span>
+				</div>
+				<div class = "more right">
+					<a href="">More
+						<img src="images/14684852581458638.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class = "roseImg clear">
+				<div class = "oneBig left">
+					<a href="" class = "xp">
+						<img src="images/14659960399162258.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+				<div class = "fourImg right">
+					<a href="" class = "xp a1">
+						<img src="picture/14728117428421702.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a2">
+						<img src="picture/14695169335459959.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a3">
+						<img src="picture/14652877281146502.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a4">
+						<img src="picture/14652877368769075.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+			</div>
+		</div><!-- 鲜花玫瑰 endding -->
+		<!-- 永生玫瑰 -->
+		<div class = "roseBox">
+			<div class = "title">
+				<div class = "biaoti left">
+					<span class = "sp1">鲜花玫瑰</span>
+					<span class = "sp2">|</span>
+					<span class = "sp3">Preserved Rose</span>
+				</div>
+				<div class = "more right">
+					<a href="">More
+						<img src="images/14684852581458638.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class = "roseImg clear">
+				<div class = "oneBig left">
+					<a href="" class = "xp" >
+						<img src="images/14652879189712808.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+				<div class = "fourImg right">
+					<a href="" class = "a1 xp">
+						<img src="picture/14652879287791434.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a2">
+						<img src="picture/14652879375002955.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a3">
+						<img src="picture/14652879452142051.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a4">
+						<img src="picture/14652879526403210.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+			</div>
+		</div><!-- 永生玫瑰 endding -->		
+		<!-- 玫瑰珠宝 -->
+		<div class = "roseBox">
+			<div class = "title">
+				<div class = "biaoti left">
+					<span class = "sp1">玫瑰珠宝</span>
+					<span class = "sp2">|</span>
+					<span class = "sp3">Jewelry</span>
+				</div>
+				<div class = "more right">
+					<a href="">More
+						<img src="images/14684852581458638.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class = "roseImg clear">
+				<div class = "oneBig left">
+					<a href="" class = "xp">
+						<img src="picture/14659960681003531.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+				<div class = "fourImg right">
+					<a href="" class = "xp a1">
+						<img src="picture/14685770366333480.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a2">
+						<img src="picture/14703664133205359.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a3">
+						<img src="picture/14652881667111097.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a4">
+						<img src="picture/14652881983867051.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+			</div>
+		</div><!-- 玫瑰珠宝 endding -->
+		<!-- 玫瑰饰品 -->
+		<div class = "roseBox">
+			<div class = "title">
+				<div class = "biaoti left">
+					<span class = "sp1">玫瑰饰品</span>
+					<span class = "sp2">|</span>
+					<span class = "sp3">Accessory</span>
+				</div>
+				<div class = "more right">
+					<a href="">More
+						<img src="images/14684852581458638.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class = "roseImg clear">
+				<div class = "oneBig left">
+					<a href="" class = "xp">
+						<img src="picture/14703858625685852.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+				<div class = "fourImg right">
+					<a href="" class = "xp a1">
+						<img src="picture/14703024879648912.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a2">
+						<img src="picture/14652884968677677.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a3">
+						<img src="picture/14685770366333480.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+					<a href="" class = "xp a4">
+						<img src="picture/14652885187093761.jpg" alt="">
+						<div class = "coverBg"></div>
+					</a>
+				</div>
+			</div>
+		</div><!-- 玫瑰饰品 endding -->		
+		<!-- 分割线 -->
+		<div class = "cutline clear"></div>
+		<!-- 专卖店 -->
+		<div class = "spec-store clear">
+			<a href="" class = "xp a1">
+				<img src="picture/14652889582596601.jpg" alt="">
+				<div class = "coverBg"></div>
+			</a>
+			<a href="" class = "xp a2">
+				<img src="picture/14652889697737388.jpg" alt="">
+				<div class = "coverBg"></div>
+			</a>
+		</div>
+		
+	</div><!-- main container endding -->
+	
+	<div class = "footer clear">
+	</div>
+	<div class = "backTo-top">
+		<a href="" class = "iconfont backTop">&#xe600;</a>
+	</div>
+	<div class = "weixin">
+		<a href="" class = "iconfont weinxinA">&#xe601;</a>
+	</div>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RoseOnly首页_一生只送一人_中国高端鲜花第一品牌</title>
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type = "text/javascript" src = "js/jquery-1.12.4.js"></script>
+	<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+	<script type = "text/javascript" src = "js/style.js"></script>
+	<script type = "text/javascript" src = "js/shopCart.js"></script>
+	<script type = "text/javascript" src = "js/login.js"></script>
+	<script>
+		$(function(){
+			$(".nav-container").load("html/nav.html",function(){
+				$(function(){
+					var $subNavShow = $(".nav-container #nav > li").mouseenter(function(){
+						$("#nav > li > a").removeClass("on");
+						$(this).find("a").addClass("on");
+						//console.log("ok");
+						// $(this).find(".sub-nav").fadeIn(2000);
+						$(this).find(".sub-nav").css({display: "block"});
+						$(this).find(".sub-nav").stop().animate({
+							opacity:1,
+							zIndex:99999
+						},600);
+					}).mouseleave(function(){
+						$(this).find(".sub-nav").css({display: "none"});
+						$("#nav > li > a").removeClass("on");
+						$(this).find(".sub-nav").stop().animate({
+							opacity:0,
+							zIndex: 10000,
+						},600);
+					});
+				});						
+			});
+			$(".footer").load("html/foot.html");
+			$("#cartNum").html($("#tableAdd > tbody > tr").length);
+			$(".backTo-top").css("display","none");
+		});
+	</script>
+</head>
+<body>
+	<div class = "header">
+		<div class = "head">
+			<a href="index.html" id = "roseonly-logo" class = "roseonlyLogo"></a>
+			<a href="index.html" class = "love-roseonly"></a>
+			<div class = "right loginBox">
+				<a href="login.html"><span id="ischan" class = "span1 change1"><!-- 登录 --></span><span><!-- | --></span></a>
+				<a id = "tuichu" href="signup.html"><span class = "span1 change2"><!-- 注册 --></span><span><!-- | --></span></a>
+				<a href="shopCart.html" class = "iconfont gwd">&#xe602;</a>
+				<span id = "cartNum">(0)</span>
+			</div>
+		</div>
+	</div>
+	<div class = "logo-container">
+		<a href="">
+			<img src="images/14659848743575108.png" alt="">
+		</a>
+	</div>
+
+	<div class = "nav-container">
+
+	</div>
+	<!-- 登陆  start-->
+	<div class = "login-bg">
+		<div class = "login">
+			<form class = "login-form" action=""  method = "">	
+				<div class = "loginTit">登录</div>
+				<div class = "loginInput">
+					<img src="images/14682248307391179.png" alt="">
+					<input id = "username2" type="text" name = "username" placeholder = "请输入手机号" class = "inputBox">
+					<div class = "remider" id = "ph2">remider</div>
+				</div>
+				
+				<div class = "loginInput">
+					<img src="images/14682248238795325.png" alt="">
+					<input id = "password2" type="password" name = "username" placeholder = "请输入密码" class = "inputBox">
+					<div id = "psw2" class = "remider">remider</div>
+				</div>
+				<div class = "signA">
+					<a href="signup.html">快速注册</a>
+					<a href="#">忘记密码</a>
+				</div>
+				<a href="javascript:;" class = "loginBtn">登录</a>
+				<div class = "loginBot">roseonly支持门店城市当日达服务！</div>
+
+			</form>	
+			
+		</div>
+		
+	</div>	
+
+
+
+	<!-- 主要内容endding -->
+	<div class = "footer clear">
+	</div>
+	<div class = "backTo-top">
+		<a href="" class = "iconfont backTop">&#xe600;</a>
+	</div>
+	<div class = "weixin">
+		<a href="" class = "iconfont weinxinA">&#xe601;</a>
+	</div>
+</body>
+</html>

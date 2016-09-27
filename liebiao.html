@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RoseOnly列表页面</title>
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type = "text/javascript" src = "js/jquery-1.12.4.js"></script>
+	<script type = "text/javascript" src = "js/jquery.cookie.js"></script>
+	<script type = "text/javascript" src = "js/style.js"></script>
+	<script type = "text/javascript" src = "js/shopCart.js"></script>
+	<script>
+		$(function(){
+			$(".nav-container").load("html/nav.html",function(){
+				$(function(){
+					var $subNavShow = $(".nav-container #nav > li").mouseenter(function(){
+						$("#nav > li > a").removeClass("on");
+						$(this).find("a").addClass("on");
+						console.log("ok");
+						// $(this).find(".sub-nav").fadeIn(2000);
+						$(this).find(".sub-nav").css({display: "block"});
+						$(this).find(".sub-nav").stop().animate({
+							opacity:1,
+							zIndex:99999
+						},600);
+					}).mouseleave(function(){
+						$(this).find(".sub-nav").css({display: "none"});
+						$("#nav > li > a").removeClass("on");
+						$(this).find(".sub-nav").stop().animate({
+							opacity:0,
+							zIndex: 10000,
+						},600);
+					});
+				});						
+			});
+			$(".footer").load("html/foot.html");
+			$("#cartNum").html("("+ $("#tableAdd > tbody > tr").length +")");
+			$(".backTo-top").css("display","none");
+			//JQ获取列表页面的 ajax 数据
+			var loadData = function(){
+				$.get("json/shop.json").done(function(data){
+					var html = "";
+					//console.log(data);
+					$.each(data,function(i,o){
+						//console.log(i,o);
+						html += "<a href=\"detail.html\">"
+							 + "<li>"
+							 + "<div class = \"li-img\"><img src=\""+ o.img +"\" alt=\"\"></div>"
+							 + "<b class = \"b1\">"+ o.pname +"</b>"
+							 + "<p class = \"p1\">"+ o.subpname +"</p>" 
+							 + "<b class = \"b1\">"+ o.price +"</b>"
+							 + "</li>" 
+							 + "</a>";
+					});
+					$("#ShopList").html(html);
+				});
+			}
+
+			// 价格区间商品的收索
+			// $searchPrice = function(){
+			// 	$(".nav-container .pirce-input").on("change",function(){
+			// 		var $jia1 = $("#jia1").val();
+			// 		console.log($jia1);
+			// 		console.log($jia2);
+			// 		var $jia2 = $("#jia2").val();
+			// 		$("")
+			// 	});
+			// }
+
+			loadData();
+		});
+	</script>
+
+</head>
+<body>
+	<div class = "header">
+		<div class = "head">
+			<a href="index.html" id = "roseonly-logo" class = "roseonlyLogo"></a>
+			<a href="index.html" class = "love-roseonly"></a>
+			<div class = "right loginBox">
+				<a class = "change1" href="login.html"><span id="ischan" class = "span1">登录</span><span>|</span></a>
+				<a class = "change2" href="signup.html"><span class = "span1">注册</span><span>|</span></a>
+				<a href="shopCart.html" class = "iconfont gwd">&#xe602;</a>
+				<span id = "cartNum">(0)</span>
+			</div>
+		</div>
+	</div>
+	<div class = "logo-container">
+		<a href="">
+			<img src="images/14659848743575108.png" alt="">
+		</a>
+	</div>
+
+	<div class = "nav-container">
+	</div>
+	<!-- 列表页 导航  start-->
+
+	<div class = "list-container">
+		<div class = "list-bg"></div>
+		<div class = "rose-select">
+			<a href="javascript:;" class = "sort on">综合</a>
+			<a href="javascript:;" class = "sort">销量</a>
+			<a href="javascript:;" class = "sort">最新</a>
+			<a href="javascript:;" class = "sort">价格</a>
+			<input id = "jia1" class = "price-input" type="number" placeholder = "￥">
+			<span class = "link-span">—</span>
+			<input id = "jia2" class = "price-input" type="number" placeholder = "￥">
+		</div>
+		<ul class = "list-con" id = "ShopList">
+		<!--<a href="">
+				<li>
+					<div class = "li-img"><img src="picture/14557858492967267.png" alt=""></div>
+					<b class = "b1">永生玫瑰 - 为爱而生系列</b>
+					<p class = "p1">音乐玫瑰许愿  </p>
+					<b class = "b1">￥1999.0</b>
+				</li>
+			</a> -->
+		</ul>
+	</div>
+
+	<!-- 列表页面 导航 endding -->
+	<div class = "footer clear">
+	</div>
+	<div class = "backTo-top">
+		<a href="" class = "iconfont backTop">&#xe600;</a>
+	</div>
+	<div class = "weixin">
+		<a href="" class = "iconfont weinxinA">&#xe601;</a>
+	</div>
+</body>
+</html>
